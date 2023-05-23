@@ -35,11 +35,11 @@ def evaluate(individuo, final = False):
     hsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
 
     # Define the lower and upper boundaries for the color in HSV
-    lower_yellow = individuo[0] # Lower boundary
-    upper_yellow = individuo[1] # Upper boundary 
+    lower = individuo[0] # Lower boundary
+    upper = individuo[1] # Upper boundary 
 
     # Create the color mask
-    collor_mask = cv2.inRange(hsv_image, lower_yellow, upper_yellow)
+    collor_mask = cv2.inRange(hsv_image, lower, upper)
    
     # Create a white image of the same size as the original image
     white_image = np.full_like(image, (255, 255, 255), dtype=np.uint8)
